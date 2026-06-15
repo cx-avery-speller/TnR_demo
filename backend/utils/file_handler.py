@@ -87,7 +87,7 @@ def process_yaml_file(file_path):
         return {'error': 'YAML library not installed'}
     try:
         with open(file_path, 'r') as f:
-            data = yaml.load(f)
+            data = yaml.safe_load(f)
         return data
     except Exception as e:
         return {'error': str(e)}
